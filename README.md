@@ -1,6 +1,6 @@
 # wanikani-v2-client
 
-A typed, ergonomic TypeScript client for the [WaniKani API v2](https://docs.api.wanikani.com/20170710/).
+A typed, zero-dependency, ergonomic TypeScript client for the [WaniKani API v2](https://docs.api.wanikani.com/20170710/).
 
 Works in the browser, Node.js 20+, and Bun.
 
