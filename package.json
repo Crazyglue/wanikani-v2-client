@@ -1,6 +1,6 @@
 {
   "name": "wanikani-v2-client",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A typed, ergonomic client for the WaniKani API v2",
   "author": "Crazyglue",
   "repository": {
