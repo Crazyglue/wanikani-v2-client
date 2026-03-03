@@ -1,7 +1,7 @@
 ---
 name: wanikani
 description: Answer questions about WaniKani learning progress, reviews, levels, accuracy, and SRS stages
-allowed-tools: Bash(node *)
+allowed-tools: Bash(node *), Bash(npx wanikani-v2-client *)
 user-invocable: true
 ---
 
@@ -32,8 +32,10 @@ Use the snapshot above to answer the user's question naturally. Provide specific
 
 If the snapshot doesn't contain enough detail, run additional queries:
 
-- **Filtered assignments**: `node .claude/skills/wanikani/query.mjs assignments --level N --srs-stage N --type radical|kanji|vocabulary|kana_vocabulary`
-- **Low accuracy items**: `node .claude/skills/wanikani/query.mjs review-stats --below-pct 70`
-- **Recent reviews**: `node .claude/skills/wanikani/query.mjs reviews --since 2025-01-01`
+- **Filtered assignments**: `npx wanikani-v2-client assignments --levels 1,2 --srs-stages 1,2,3`
+- **Review statistics**: `npx wanikani-v2-client review-statistics --subject-ids 1,2,3`
+- **Recent reviews**: `npx wanikani-v2-client reviews --since 2025-01-01`
+- **Subjects by type/level**: `npx wanikani-v2-client subjects --levels 1,2 --types kanji,radical`
+- **Single resource by ID**: `npx wanikani-v2-client subjects 440`
 
 All output is JSON. Parse it and summarize for the user — never dump raw JSON.

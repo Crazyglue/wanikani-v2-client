@@ -25,6 +25,9 @@
       }
     }
   },
+  "bin": {
+    "wanikani": "./dist/cli.js"
+  },
   "files": [
     "dist"
   ],
@@ -54,6 +57,7 @@
     "node": ">=20.0.0"
   },
   "devDependencies": {
+    "@types/node": "^25.3.3",
     "oxfmt": "^0.36.0",
     "oxlint": "^1.51.0",
     "tsup": "^8.5.1",
