@@ -1,0 +1,63 @@
+{
+  "name": "wanikani-v2-client",
+  "version": "0.1.0",
+  "description": "A typed, ergonomic client for the WaniKani API v2",
+  "author": "Crazyglue",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Crazyglue/wanikani-v2-client.git"
+  },
+  "bugs": "https://github.com/Crazyglue/wanikani-v2-client/issues",
+  "homepage": "https://github.com/Crazyglue/wanikani-v2-client#readme",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run --project unit",
+    "test:watch": "vitest --project unit",
+    "test:e2e": "vitest run --project e2e",
+    "type-check": "tsc --noEmit",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt --write src/ tests/",
+    "fmt:check": "oxfmt --check src/ tests/",
+    "prepublishOnly": "npm run lint && npm run fmt:check && npm run type-check && npm run test && npm run build"
+  },
+  "keywords": [
+    "wanikani",
+    "api",
+    "japanese",
+    "kanji",
+    "srs",
+    "client"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
